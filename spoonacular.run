@@ -1,0 +1,13 @@
+# when running neos from r-script only use commands from solve onwards ...
+# reset;
+# model spoonacular.mod;
+# data spoonacular.dat;
+# option solver gurobi;
+
+solve;
+printf : "<lausn>";
+printf {d in dish: x[d] > 0}: "%s ", d;
+printf : "<lausn> ";
+printf : "<hraefni>";
+printf {i in ingredient: y[i] > 0} : "%s ", i;
+printf : "<hraefni>";
