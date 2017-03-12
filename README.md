@@ -14,3 +14,4 @@ This Shiny/R template illustrates how:
 
 The spoonacular.mod file is an example file, but is missing all constraints and objectives for the final project.
 
+![Preview](https://raw.githubusercontent.com/tprunarsson/DietSpoon/master/screenshot.png)
