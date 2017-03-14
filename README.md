@@ -14,4 +14,6 @@ This Shiny/R template illustrates how:
 
 The spoonacular.mod file is an example file, but is missing all constraints and objectives for the final project.
 
+[ShinyApp](https://tpr-1.shinyapps.io/DietSpoon/ "https://tpr-1.shinyapps.io/DietSpoon/")
+
 ![Preview](https://raw.githubusercontent.com/tprunarsson/DietSpoon/master/screenshot.png)
