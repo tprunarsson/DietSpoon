@@ -8,6 +8,7 @@
 #
 library(shiny)
 library(httr)
+library(XMLRPC)
 library(rneos)
 
 MASHLYKILL <- c("")
@@ -15,6 +16,7 @@ recipe <- list(NULL)
 recipeGlobal <- data.frame(NULL)
 urlGlobal <- c("")
 
+options(RCurlOptions = list(cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl")))
 
 searchSpoonacularDummy <- function(url) {
   load('data.Rdata')
@@ -105,11 +107,11 @@ writeAMPL <- function() {
     nutrients_name[[i]] <- chartr(c("%&'-"),c('____'), nutrname)
     nutrients_amount[[i]] <- nutramount
     nutrients_unit[[i]] <- nutrunit
-    allingredience <- unique(c(allingredience, ingredience[[i]]))
-    allnutrients <- unique(c(allnutrients, nutrients_name[[i]]))
+    allingredience <- c(allingredience, ingredience[[i]])
+    allnutrients <- c(allnutrients, nutrients_name[[i]])
   }
-  allnutrients <- sort(allnutrients)
-  allingredience <- sort(allingredience)
+  allnutrients <- sort(unique(allnutrients))
+  allingredience <- sort(unique(allingredience))
 
   # Now put this all into an AMPL dat file called "spoonacular.dat":
   cat("set dish := ", as.character(ID), file="spoonacular.dat",sep=" ",append=FALSE)
