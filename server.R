@@ -16,7 +16,7 @@ recipe <- list(NULL)
 recipeGlobal <- data.frame(NULL)
 urlGlobal <- c("")
 
-options(RCurlOptions = list(cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl")))
+#options(RCurlOptions = list(cainfo = system.file("CurlSSL", "cacert.pem", package = "RCurl")))
 
 searchSpoonacularDummy <- function(url) {
   load('data.Rdata')
